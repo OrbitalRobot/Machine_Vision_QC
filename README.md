@@ -24,6 +24,7 @@ The circuit boards to be tested were 3D printed examples that came in 4 colors p
 A complete circuit board had 44 components, any one of which could be missing on a given board.
 Criteria for an acceptable board was that all components were present in their designated locations.
 The machine's role was merely to detect if any component was missing.  If any one component was missing, the board was to be rejected.  It was not required to determine the number of missing components, their location, or the color of the board.
+
 ![image](https://user-images.githubusercontent.com/121198760/209278631-62b89ca1-4f48-412c-85bc-b2513a12f719.png)![image](https://user-images.githubusercontent.com/121198760/209279285-9dc8def7-2e07-499a-b86f-aee460a7e02a.png)![image](https://user-images.githubusercontent.com/121198760/209279349-760ef157-1a11-4f38-9c7d-4000502a5d05.png)
 
 
