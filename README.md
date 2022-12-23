@@ -78,7 +78,7 @@ Specifically, the variables of focus were:
 
 
 ### **Solution Overview**
-    **First, Compensate For Translucense**
+  **First, Compensate For Translucense**
 
 With the parts positioned reliably enough, an area of the board that is always blank was examined with test shots on several boards.  On each image, a histogram with 256 bins was created, and the bin with the highest values was noted.  Then multiple shots were taken with different exposure times and the histogram bin with the maximum value was noted for each exposure time.  From this it was determined that by adjusting the exposure time for a given board, one could get the histogram bin with the maximum value to be between 200 and 220 reliably.  This would be used as a method for calibrating exposure time to normalize for varying levels of translucense moving forward.  This blank area on the board shall be referred to as the calibration area from this point on.
 
@@ -89,7 +89,7 @@ Once the color of the board was known, a small set of possible exposure times wa
 
 
 
-    **Then Check For Each Component's Presence**
+  **Then Check For Each Component's Presence**
 
 A static dictionary of ROIs was built ahead of time with one entry for each of the 44 components that should be checked on a board.  Then, a grayscale image of the test board is taken.  The grayscale image is reduced to a binary black & white image based on a given threshold determined ahead of time during testing.  Then the black pixels in each component's ROI are counted.  They are compared to a dictionary of known black pixel counts from acceptable boards.  If any ROI's black pixel count differs by more than a certain margin from the good board's, the component in that ROI is deemed missing and the board fails.  In practice, this process had to be done with 2 different binary image thresholds.  One threshold worked best for evaluating components near the perimeter of the board, and one threshold worked better for evaluating components on the rest of the board.  So 2 grayscale shots are taken and converted to binary images, each with one of two binary thresholds.
 
