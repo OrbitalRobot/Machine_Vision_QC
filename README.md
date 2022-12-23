@@ -43,6 +43,8 @@ The student's machine vision solution was expected to be at least as fast as the
 
 ![image](https://user-images.githubusercontent.com/121198760/209278962-3642c830-c9c4-41c3-af2b-f0c3ffe7fcfe.png)
 ![image](https://user-images.githubusercontent.com/121198760/209279118-afe49a41-1024-464d-8cc9-782cc6bac036.png)
+![image](https://user-images.githubusercontent.com/121198760/209285876-0e8e0cf9-21e6-48c1-9628-8feef83889c1.png)
+
 
 
 ### **Physical System Build**
@@ -77,6 +79,7 @@ Specifically, the variables of focus were:
 
 ### **Solution Overview**
 **First, Compensate For Translucense**
+
 With the parts positioned reliably enough, an area of the board that is always blank was examined with test shots on several boards.  On each image, a histogram with 256 bins was created, and the bin with the highest values was noted.  Then multiple shots were taken with different exposure times and the histogram bin with the maximum value was noted for each exposure time.  From this it was determined that by adjusting the exposure time for a given board, one could get the histogram bin with the maximum value to be between 200 and 220 reliably.  This would be used as a method for calibrating exposure time to normalize for varying levels of translucense moving forward.  This blank area on the board shall be referred to as the calibration area from this point on.
 
 In general, different colored boards had different ranges of acceptable exposure times.  To narrow the range of possible exposure times, the color of the board was determined.  A QVGA color image was taken and the L-A-B values from the histogram of the board's calibration area were converted to RGB values.  After testing a sample set of boards of each color, an average RGB set of values for a given colored board was recorded.  To determine the color of a given board, its calibration area's RGB values were compared against dicitonaries of known RGB values within a certain range to check for a match.
@@ -87,6 +90,7 @@ Once the color of the board was known, a small set of possible exposure times wa
 
 
 **Then Check For Each Component's Presence**
+
 A static dictionary of ROIs was built ahead of time with one entry for each of the 44 components that should be checked on a board.  Then, a grayscale image of the test board is taken.  The grayscale image is reduced to a binary black & white image based on a given threshold determined ahead of time during testing.  Then the black pixels in each component's ROI are counted.  They are compared to a dictionary of known black pixel counts from acceptable boards.  If any ROI's black pixel count differs by more than a certain margin from the good board's, the component in that ROI is deemed missing and the board fails.  In practice, this process had to be done with 2 different binary image thresholds.  One threshold worked best for evaluating components near the perimeter of the board, and one threshold worked better for evaluating components on the rest of the board.  So 2 grayscale shots are taken and converted to binary images, each with one of two binary thresholds.
 
 
