@@ -1,8 +1,8 @@
-import sensor, image, time, pyb, math
+import sensor, image, time, pyb
 
 # ----------colors
 # average RGB value for each color of board when shot at a 40000us exposure time
-colors = {"yellow": (247, 255, 123),
+COLORS = {"yellow": (247, 255, 123),
           "blue": (110, 255, 255),
           "red": (255, 203, 115),
           "gray": (74, 215, 115)}
@@ -170,8 +170,8 @@ def get_color():
     # compare RGB values to those of known colors
     # if all values (R-G-B) are within a tolerance of the reference data, we have a successful match
     success = [1, 1, 1]
-    for key in colors.keys():
-        reference_nums = colors[key]
+    for key in COLORS.keys():
+        reference_nums = COLORS[key]
         print(f"ref nums: {reference_nums}")
         print(f"rgb nums: {rgb_nums}")
         # create empty array to track which values from RGB match with the reference set
