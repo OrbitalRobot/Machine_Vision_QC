@@ -1,5 +1,5 @@
 # **Machine_Vision_QC**
-*This was a final project for a university machine vision course*
+*This was a final project completed in a short timeframe for a university machine vision course.  It is unpolished and was uploaded to demonstrate what was learned during the course.*
 
 
 
