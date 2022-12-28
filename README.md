@@ -1,6 +1,8 @@
 # **Machine_Vision_QC**
 *This was a final project completed in a short timeframe for a university machine vision course.  It is unpolished and was uploaded to demonstrate what was learned during the course.*
 
+Videos of the final student solution can be seen here: [Physical Build](https://youtu.be/jEyg4VlbFEg), [Operation](https://youtu.be/skzYGORNM7I)
+
 
 
 
